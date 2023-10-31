@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "clase-05"
+version = "0.1.0"
+description = "Este es un proyecto de prueba para aprender Flask"
+authors = ["Ramses Martinez <ramses.mtz96@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "2.1.0"
+flask = "^3.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
