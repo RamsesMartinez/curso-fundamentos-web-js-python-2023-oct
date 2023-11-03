@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "clase-06"
+version = "0.1.0"
+description = "Ejercicios de clase 06"
+authors = ["Ramses Martinez <ramses.mtz96@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^3.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
