@@ -1,0 +1,46 @@
+{% extends "base_template.html" %}
+
+
+{% block title %}
+    Iniciar Sesión
+{% endblock %}
+
+
+{% block content %}
+
+<div class="mdl-layout">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{category}}">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+<form method="POST" action="{{ url_for('login') }}">
+    {{ form.hidden_tag() }}
+    <div class="mdl-textfield mdl-js-textfield">
+        {{ form.email(class="mdl-textfield__input", id="email") }}
+        <label class="mdl-textfield__label" for="email">Email</label>
+        {% if form.email.errors %}
+        <span class="mdl-textfield__error">{{ form.email.errors[0] }}</span>
+        {% endif %}
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+        {{ form.password(class="mdl-textfield__input", id="password", type="password") }}
+        <label class="mdl-textfield__label" for="password">Contraseña</label>
+        {% if form.password.errors %}
+        <span class="mdl-textfield__error">{{ form.password.errors[0] }}</span>
+        {% endif %}
+    </div>
+    <p>
+        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised">
+            Iniciar sesión
+        </button>
+    </p>
+</form>
+
+{% endblock %}

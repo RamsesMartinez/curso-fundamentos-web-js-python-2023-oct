@@ -1,0 +1,54 @@
+{% extends "base_template.html" %}
+
+
+{% block title %}
+    Crear usuario
+{% endblock %}
+
+
+{% block content %}
+
+<div class="mdl-layout">
+    {% if error %}
+
+    <div class="alert alert-{{category}}">
+        {{error}}
+    </div>
+    {% endif %}
+
+</div>
+<form method="POST" action="{{ url_for('signup') }}">
+    {{ form.hidden_tag() }}
+
+    <div class="mdl-textfield mdl-js-textfield">
+        {{ form.name(class="mdl-textfield__input", id="name") }}
+        <label class="mdl-textfield__label" for="name">Nombre</label>
+        {% if form.name.errors %}
+        <span class="mdl-textfield__error">{{ form.name.errors[0] }}</span>
+        {% endif %}
+    </div>
+
+
+    <div class="mdl-textfield mdl-js-textfield">
+        {{ form.email(class="mdl-textfield__input", id="email") }}
+        <label class="mdl-textfield__label" for="email">Email</label>
+        {% if form.email.errors %}
+        <span class="mdl-textfield__error">{{ form.email.errors[0] }}</span>
+        {% endif %}
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+        {{ form.password(class="mdl-textfield__input", id="password", type="password") }}
+        <label class="mdl-textfield__label" for="password">Contraseña</label>
+        {% if form.password.errors %}
+        <span class="mdl-textfield__error">{{ form.password.errors[0] }}</span>
+        {% endif %}
+    </div>
+    <p>
+        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised">
+            Crear cuenta
+        </button>
+    </p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "clase-08"
+version = "0.1.0"
+description = "Proyecto de Flask para conectar con BDD"
+authors = ["Ramses Martinez <ramses.mtz96@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.3.3"
+Flask-Login = "^0.6.3"
+flask-wtf = "^1.2.1"
+flask-sqlalchemy = "^3.1.1"
+werkzeug = "^2.3.7"
+email-validator = "^2.1.0.post1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
